@@ -15,3 +15,65 @@ if(id){if(readChoice()==='yes')enable();else if(readChoice()!=='no')consent.hidd
 document.querySelectorAll('[data-consent]').forEach(b=>b.addEventListener('click',()=>{try{localStorage.setItem('zam-analytics',b.dataset.consent);}catch{}consent.hidden=true;if(b.dataset.consent==='yes')enable();}));
 document.querySelector('#reset-consent')?.addEventListener('click',()=>{try{localStorage.removeItem('zam-analytics');}catch{}location.reload();});
 document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',()=>{if(enabled)window.gtag('event',a.dataset.track,{page_path:location.pathname});}));
+
+// Motion progressively enhances visible content; navigation and scrolling stay native.
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const desktop = matchMedia('(min-width: 901px) and (hover: hover) and (pointer: fine)');
+  const header = document.querySelector('.site-header');
+  const candidates = [...document.querySelectorAll('.photo-item, .project-grid article, .publication-cover, .about-image, .page-heading h1, .section-heading h2')];
+  let observer, frame = 0;
+  const moving = [...document.querySelectorAll('.hero-photo img')];
+  const active = new Set();
+  const visible = element => { element.classList.remove('motion-pending'); observer?.unobserve(element); };
+  function configure() {
+    observer?.disconnect();
+    candidates.forEach(element => element.classList.remove('motion-pending', 'motion-reveal'));
+    if (reduced.matches || !('IntersectionObserver' in window)) return;
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) visible(entry.target); });
+    }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+    candidates.forEach((element, index) => {
+      element.style.setProperty('--reveal-delay', `${desktop.matches ? (index % 2) * 75 : 0}ms`);
+      // Never conceal content already on screen, including restored scroll positions.
+      if (element.getBoundingClientRect().top >= innerHeight) {
+        element.classList.add('motion-reveal', 'motion-pending');
+        observer.observe(element);
+      }
+    });
+    schedule();
+  }
+  function paint() {
+    frame = 0;
+    header?.classList.toggle('is-scrolled', scrollY > 32);
+    moving.forEach(img => {
+      if (reduced.matches || !desktop.matches) { img.style.removeProperty('translate'); return; }
+      if (!active.has(img)) return;
+      const rect = img.parentElement.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, (innerHeight - rect.top) / (innerHeight + rect.height)));
+      img.style.translate = `0 ${(progress - .5) * 32}px`;
+    });
+  }
+  function schedule() { if (!frame) frame = requestAnimationFrame(paint); }
+  if ('IntersectionObserver' in window) {
+    const viewport = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.isIntersecting ? active.add(entry.target) : active.delete(entry.target));
+      schedule();
+    });
+    moving.forEach(img => viewport.observe(img));
+  }
+  document.addEventListener('focusin', event => {
+    const element = event.target.closest('.motion-pending');
+    if (element) visible(element);
+  });
+  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+    candidates.filter(element => !element.hidden).forEach(visible);
+  }));
+  addEventListener('scroll', schedule, { passive: true });
+  addEventListener('resize', schedule, { passive: true });
+  addEventListener('pageshow', configure);
+  reduced.addEventListener('change', () => { configure(); schedule(); });
+  desktop.addEventListener('change', () => { configure(); schedule(); });
+  configure();
+  schedule();
+})();
