@@ -13,7 +13,7 @@ async function body(req,max=24000000){let size=0,chunks=[];for await(const chunk
 const authorized=req=>{const value=(req.headers.authorization||'').replace(/^Bearer /,'');return value.length===token.length&&timingSafeEqual(Buffer.from(value),Buffer.from(token));};
 let mutation=Promise.resolve();
 const serial=fn=>{const next=mutation.then(fn);mutation=next.catch(()=>{});return next;};
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.webp':'image/webp','.xml':'application/xml','.txt':'text/plain'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.woff2':'font/woff2','.webp':'image/webp','.xml':'application/xml','.txt':'text/plain'};
 const server=http.createServer(async(req,res)=>{
  const send=(code,data,type='application/json')=>{res.writeHead(code,{'Content-Type':type,'X-Content-Type-Options':'nosniff','Cache-Control':'no-store','Referrer-Policy':'no-referrer'});res.end(type==='application/json'?JSON.stringify(data):data);};
  try{

@@ -8,6 +8,7 @@ export function validate(d,m) {
  for(const key of ['projects','services','journal']) { const seen=new Set(); for(const p of d[key]) {if(!slugOK(p.slug)||seen.has(p.slug)) throw Error(`Invalid or duplicate slug in ${key}`);seen.add(p.slug);} }
  const ids = new Set(d.photos.map(p=>p.id));
  if(ids.size!==d.photos.length)throw Error('Duplicate photo IDs');
+ if(d.settings.heroImage&&!ids.has(d.settings.heroImage))throw Error('Hero photograph is missing');
  for(const p of d.photos)if(!m[p.image])throw Error(`Missing image ${p.image}`);
  for(const p of d.projects) for(const id of [p.cover,...p.photos])if(!ids.has(id))throw Error(`Missing project photograph ${id}`);
  for(const p of [...d.services,...d.publications,...d.journal])if(p.image&&!ids.has(p.image))throw Error(`Missing photograph ${p.image}`);
@@ -20,6 +21,7 @@ export async function build(out=join(root,'.preview')) {
  try{for(const p of JSON.parse(await readFile(join(out,'.generated.json'),'utf8')))if(!pages.has(p)&&/^\/(?:[a-z0-9-]+\/)*$/.test(p))await unlink(join(out,p.slice(1),'index.html')).catch(()=>{});}catch{}
  for(const [p,html] of pages){const dir=join(out,p.slice(1));await mkdir(dir,{recursive:true});await writeFile(join(dir,'index.html'),html);}
  await cp(join(root,'content/images'),join(out,'images'),{recursive:true});await mkdir(join(out,'assets'),{recursive:true});
+ await cp(join(root,'src/fonts'),join(out,'assets/fonts'),{recursive:true});
  for(const f of ['site.css','site.js','mark.svg'])await cp(join(root,'src',f),join(out,'assets',f));
  await writeFile(join(out,'404.html'),pages.get('/404/'));
  await writeFile(join(out,'robots.txt'),`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${d.settings.domain}/sitemap.xml\n`);

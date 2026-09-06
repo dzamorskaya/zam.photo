@@ -44,3 +44,13 @@ test('Unpublishing a project removes its route and home link',()=>{
 test('All responsive images have files and meaningful alt descriptions',async()=>{
  for(const p of data.photos){assert.ok(p.alt.length>10);for(const v of manifest[p.image].variants)assert.ok((await stat(join(root,'.preview',v.src))).size>0);}
 });
+test('Hero photo can be selected independently and links to its own project',()=>{
+ const d=structuredClone(data);d.settings.heroImage='desert';const html=renderSite(d,manifest).get('/');
+ assert.ok(html.includes('class="hero-photo" href="/work/somewhere-out-west/"'));
+ assert.ok(html.includes('01 — Somewhere out west'));
+});
+test('Empty journal is omitted from main navigation',()=>{
+ const d=structuredClone(data);d.journal.forEach(j=>j.published=false);
+ const nav=renderSite(d,manifest).get('/').match(/<nav id="main-nav".*?<\/nav>/)[0];
+ assert.ok(!nav.includes('href="/journal/"'));assert.ok(nav.includes('Book a shoot'));
+});
