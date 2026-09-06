@@ -59,3 +59,20 @@ test('Direct contact links include email, Instagram and callable phone',()=>{
  for(const target of ['mailto:dzamorskaya@icloud.com','https://instagram.com/zam.photo','tel:+14248447381'])assert.ok(contact.includes('href="'+target+'"'));
  assert.ok(contact.includes('+1 424 844 7381'));
 });
+test('No unconfirmed testimonials, prices or removed positioning on any public page',()=>{
+ for(const [path,html]of pages){assert.ok(!/Sofia M\.|James K\.|Elena (?:&amp;|&) Marcus|\bcouples\b|love story|\bengagement\b|\bwedding\b|\$350|\$600/i.test(html),path);assert.ok(!html.includes('class="quotes"'),path);}
+});
+test('Pricing only displays owner-approved amounts and commercial stays quote-based',()=>{
+ const d=structuredClone(data);d.services[0].price='Starting at $999';d.services[0].priceApproved=false;
+ let p=renderSite(d,manifest);assert.ok(!p.get('/pricing/').includes('$999'));
+ d.services[0].priceApproved=true;p=renderSite(d,manifest);assert.ok(p.get('/pricing/').includes('$999'));
+ const c=d.services.find(s=>s.category==='commercial');c.price='$777';c.priceApproved=true;
+ p=renderSite(d,manifest);assert.ok(!p.get('/pricing/').includes('$777'));assert.ok(!p.get('/'+c.slug+'/').includes('$777'));
+});
+test('Journal URLs remain available while absent from navigation',()=>{
+ assert.ok(pages.has('/journal/'));assert.ok(pages.has('/journal/planning-an-editorial-portrait/'));
+ for(const html of pages.values())assert.ok(!html.match(/<nav id="main-nav".*?<\/nav>/)[0].includes('/journal/'));
+});
+test('Headshots has no unrelated portfolio imagery or made-up session facts',()=>{
+ const html=pages.get('/headshots-los-angeles/');assert.ok(!/<img src=/.test(html));assert.ok(!html.includes('property="og:image"'));assert.ok(html.includes('Inquire for Pricing'));
+});
