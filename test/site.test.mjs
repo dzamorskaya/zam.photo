@@ -54,3 +54,8 @@ test('Empty journal is omitted from main navigation',()=>{
  const nav=renderSite(d,manifest).get('/').match(/<nav id="main-nav".*?<\/nav>/)[0];
  assert.ok(!nav.includes('href="/journal/"'));assert.ok(nav.includes('Book a shoot'));
 });
+test('Direct contact links include email, Instagram and callable phone',()=>{
+ const contact=pages.get('/contact/');
+ for(const target of ['mailto:dzamorskaya@icloud.com','https://instagram.com/zam.photo','tel:+14248447381'])assert.ok(contact.includes('href="'+target+'"'));
+ assert.ok(contact.includes('+1 424 844 7381'));
+});
