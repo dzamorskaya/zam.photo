@@ -52,9 +52,9 @@ is included in final selected images. The violet series remains unpublished.
 ### Inquiry form activation
 
 The native FormSubmit form is prepared in `src/render.mjs`. Its recipient is
-`settings.email`. An activation request was sent to the owner's iCloud address.
-`settings.formEnabled` remains false until activation and delivery are verified;
-the public page offers direct email contact while the form is hidden.
+`settings.email`. The owner confirmed activation; FormSubmit accepted a labelled verification
+submission with `success: true`. `settings.formEnabled` is now true. Actual
+iCloud receipt and the native client auto-response still need inbox confirmation.
 
 After the owner clicks **Activate Form**, enable the form locally and test one
 clearly labelled submission with the owner. Verify both the owner notification
