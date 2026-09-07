@@ -37,25 +37,6 @@
     ],
     "src": "/images/p_gezno-1238.webp"
   },
-  "p_elevator": {
-    "width": 1333,
-    "height": 2000,
-    "variants": [
-      {
-        "src": "/images/p_elevator-480.webp",
-        "width": 480
-      },
-      {
-        "src": "/images/p_elevator-960.webp",
-        "width": 960
-      },
-      {
-        "src": "/images/p_elevator-1333.webp",
-        "width": 1333
-      }
-    ],
-    "src": "/images/p_elevator-1333.webp"
-  },
   "p_fence": {
     "width": 1333,
     "height": 2000,
