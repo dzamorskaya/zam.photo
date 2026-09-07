@@ -17,22 +17,246 @@
   "photos": [
     {
       "id": "hollywood",
-      "image": "p_hollywood",
-      "title": "Hollywood, after dark",
+      "image": "series-hollywood",
+      "title": "Hollywood, after dark — 01",
       "category": "editorial",
-      "alt": "Fashion portrait beneath the neon lights of Hollywood"
+      "alt": "Fashion portrait in a black satin top beneath a yellow Hollywood neon sign"
+    },
+    {
+      "id": "hollywood-9389",
+      "image": "series-hollywood-9389",
+      "title": "Hollywood, after dark — 02",
+      "category": "editorial",
+      "alt": "Fashion portrait beside a theatre entrance and colourful neon on Hollywood Boulevard"
+    },
+    {
+      "id": "hollywood-9601",
+      "image": "series-hollywood-9601",
+      "title": "Hollywood, after dark — 03",
+      "category": "editorial",
+      "alt": "Portrait in a black ruffled top and sequinned skirt against decorative glass doors"
+    },
+    {
+      "id": "hollywood-9559",
+      "image": "series-hollywood-9559",
+      "title": "Hollywood, after dark — 04",
+      "category": "editorial",
+      "alt": "Full-length fashion portrait seated on a cafe chair at night"
+    },
+    {
+      "id": "violet-6467",
+      "image": "series-violet-6467",
+      "title": "Violet hour — 01",
+      "category": "editorial",
+      "alt": "Low-angle fashion portrait in a violet suit and sunglasses against an orange wall"
+    },
+    {
+      "id": "violet-6461",
+      "image": "series-violet-6461",
+      "title": "Violet hour — 02",
+      "category": "editorial",
+      "alt": "Full-length seated portrait in a violet waistcoat and trousers on black stairs"
+    },
+    {
+      "id": "violet-6462",
+      "image": "series-violet-6462",
+      "title": "Violet hour — 03",
+      "category": "editorial",
+      "alt": "Seated portrait in a violet waistcoat holding an open magazine"
+    },
+    {
+      "id": "violet-6466",
+      "image": "series-violet-6466",
+      "title": "Violet hour — 04",
+      "category": "editorial",
+      "alt": "Woman in a violet suit adjusting sunglasses on an orange rooftop beneath blue sky"
+    },
+    {
+      "id": "violet-6463",
+      "image": "series-violet-6463",
+      "title": "Violet hour — 05",
+      "category": "editorial",
+      "alt": "Close portrait in a violet blazer with sunlight falling across the face"
+    },
+    {
+      "id": "surf-1146",
+      "image": "series-surf-1146",
+      "title": "Off duty — 01",
+      "category": "editorial",
+      "alt": "Man in a dark suit carrying an orange and yellow surfboard through shallow waves"
+    },
+    {
+      "id": "surf-1012",
+      "image": "series-surf-1012",
+      "title": "Off duty — 02",
+      "category": "editorial",
+      "alt": "Portrait of a man in a suit and sunglasses holding a bright surfboard at the beach"
+    },
+    {
+      "id": "surf-1024",
+      "image": "series-surf-1024",
+      "title": "Off duty — 03",
+      "category": "editorial",
+      "alt": "Low-angle portrait of a suited man holding a surfboard overhead against blue sky"
+    },
+    {
+      "id": "surf-0997",
+      "image": "series-surf-0997",
+      "title": "Off duty — 04",
+      "category": "editorial",
+      "alt": "Full-length portrait of a barefoot man carrying a surfboard across the beach"
+    },
+    {
+      "id": "surf-0926",
+      "image": "series-surf-0926",
+      "title": "Off duty — 05",
+      "category": "editorial",
+      "alt": "Man in a dark suit seated on a surfboard holding two newspaper pages by the ocean"
+    },
+    {
+      "id": "bamboo-4356",
+      "image": "series-bamboo-4356",
+      "title": "Urban Jungle — 01",
+      "category": "editorial",
+      "alt": "Low-angle seated portrait of a man in a white vest and patterned jeans among bamboo"
+    },
+    {
+      "id": "bamboo-4261",
+      "image": "series-bamboo-4261",
+      "title": "Urban Jungle — 02",
+      "category": "editorial",
+      "alt": "Portrait of a curly-haired man in a burgundy leather blazer against bamboo"
+    },
+    {
+      "id": "bamboo-4296",
+      "image": "series-bamboo-4296",
+      "title": "Urban Jungle — 03",
+      "category": "editorial",
+      "alt": "Man in a burgundy blazer and patterned jeans standing among sunlit bamboo"
+    },
+    {
+      "id": "bamboo-4339",
+      "image": "series-bamboo-4339",
+      "title": "Urban Jungle — 04",
+      "category": "editorial",
+      "alt": "Seated male portrait with a hand at the chin under dappled light in a bamboo grove"
+    },
+    {
+      "id": "car-0205",
+      "image": "series-car-0205",
+      "title": "In her own lane — 01",
+      "category": "portrait",
+      "alt": "Full-length portrait in tan boots and a denim skirt in front of a lime green car in the desert"
     },
     {
       "id": "car",
-      "image": "p_car",
-      "title": "In her own lane",
+      "image": "series-car",
+      "title": "In her own lane — 02",
       "category": "portrait",
-      "alt": "Editorial portrait of a woman beside a lime green car"
+      "alt": "Portrait of a woman in a textured tan jacket seated in the open door of a lime green car"
+    },
+    {
+      "id": "car-0268",
+      "image": "series-car-0268",
+      "title": "In her own lane — 03",
+      "category": "portrait",
+      "alt": "Woman in a cream top with a fabric flower looking back beside an open car door"
+    },
+    {
+      "id": "car-0276",
+      "image": "series-car-0276",
+      "title": "In her own lane — 04",
+      "category": "portrait",
+      "alt": "Woman lying beside a lime green car with tan boots resting against the open door"
+    },
+    {
+      "id": "car-0278",
+      "image": "series-car-0278",
+      "title": "In her own lane — 05",
+      "category": "portrait",
+      "alt": "Overhead portrait of a woman lying on a textured jacket with her head toward the bottom of the frame"
+    },
+    {
+      "id": "night-1743",
+      "image": "series-night-1743",
+      "title": "Neon notes — 01",
+      "category": "editorial",
+      "alt": "Close portrait in silver sunglasses with a raised black leather collar beneath neon lights"
+    },
+    {
+      "id": "night-1525",
+      "image": "series-night-1525",
+      "title": "Neon notes — 02",
+      "category": "editorial",
+      "alt": "Night portrait of a man in silver sunglasses, a white vest and a black leather jacket"
+    },
+    {
+      "id": "night-2103",
+      "image": "series-night-2103",
+      "title": "Neon notes — 03",
+      "category": "editorial",
+      "alt": "Close portrait of a man holding a cigar against a pale wall, wearing silver rings and a leather jacket"
+    },
+    {
+      "id": "night-1618",
+      "image": "series-night-1618",
+      "title": "Neon notes — 04",
+      "category": "editorial",
+      "alt": "High-angle portrait of a man in a white vest and black leather jacket on a dark city street"
+    },
+    {
+      "id": "desert-9413",
+      "image": "series-desert-9413",
+      "title": "Somewhere out west — 01",
+      "category": "personal",
+      "alt": "Woman in a tan fur coat and white trousers kneeling beside a white chair in the desert at dusk"
+    },
+    {
+      "id": "desert-9401",
+      "image": "series-desert-9401",
+      "title": "Somewhere out west — 02",
+      "category": "personal",
+      "alt": "Close portrait in mirrored green sunglasses behind a white chair in the desert"
+    },
+    {
+      "id": "desert",
+      "image": "series-desert",
+      "title": "Somewhere out west — 03",
+      "category": "personal",
+      "alt": "High-angle portrait of a woman in mirrored sunglasses crouching among desert plants at twilight"
+    },
+    {
+      "id": "pool",
+      "image": "series-pool",
+      "title": "Off the beaten path — 01",
+      "category": "editorial",
+      "alt": "Overhead fashion portrait in a black blazer and blue heels inside an empty turquoise pool"
+    },
+    {
+      "id": "city-6981",
+      "image": "series-city-6981",
+      "title": "Off the beaten path — 02",
+      "category": "editorial",
+      "alt": "Portrait in a black blazer and red earrings beneath hanging red lanterns"
+    },
+    {
+      "id": "city-7399",
+      "image": "series-city-7399",
+      "title": "Off the beaten path — 03",
+      "category": "editorial",
+      "alt": "Fashion portrait in a black blazer beside a turquoise wall and a city traffic light"
+    },
+    {
+      "id": "city-6984",
+      "image": "series-city-6984",
+      "title": "Off the beaten path — 04",
+      "category": "editorial",
+      "alt": "Full-length fashion portrait in a black blazer leaning against a red column"
     },
     {
       "id": "gezno",
       "image": "p_gezno",
-      "title": "GEZNO Magazine",
+      "title": "GEZNO Magazine — cover",
       "category": "editorial",
       "alt": "GEZNO Magazine cover photographed by Daria Zamorskaia"
     },
@@ -44,32 +268,18 @@
       "alt": "Portrait of a woman in sunglasses against an elevator door"
     },
     {
-      "id": "pool",
-      "image": "p_pool",
-      "title": "Off the beaten path",
-      "category": "editorial",
-      "alt": "Fashion portrait on a staircase beside a turquoise pool"
-    },
-    {
       "id": "selin",
       "image": "selin",
-      "title": "Urban Jungle",
+      "title": "Selin Magazine — cover",
       "category": "editorial",
       "alt": "Selin Magazine cover featuring a male model among green foliage"
     },
     {
-      "id": "desert",
-      "image": "p_desert",
-      "title": "Somewhere out west",
-      "category": "personal",
-      "alt": "Woman in sunglasses seated among desert plants"
-    },
-    {
       "id": "fence",
       "image": "p_fence",
-      "title": "City fragments",
-      "category": "personal",
-      "alt": "Portrait through a chain-link fence"
+      "title": "Neon notes — City fragments",
+      "category": "editorial",
+      "alt": "Night portrait of a man in silver sunglasses and a white vest behind a chain-link fence"
     },
     {
       "id": "mels",
@@ -88,9 +298,48 @@
       "year": "",
       "cover": "hollywood",
       "photos": [
-        "hollywood"
+        "hollywood",
+        "hollywood-9389",
+        "hollywood-9601",
+        "hollywood-9559"
       ],
-      "description": "An editorial portrait shaped by Hollywood neon, saturated colour and the city after dark.",
+      "description": "Hollywood neon, black satin and the city after dark. An editorial in four frames.",
+      "credits": [],
+      "published": true
+    },
+    {
+      "slug": "violet-hour",
+      "title": "Violet hour",
+      "category": "editorial",
+      "location": "",
+      "year": "",
+      "cover": "violet-6467",
+      "photos": [
+        "violet-6467",
+        "violet-6461",
+        "violet-6462",
+        "violet-6466",
+        "violet-6463"
+      ],
+      "description": "Violet tailoring, an orange rooftop and the clean lines of a sunlit staircase.",
+      "credits": [],
+      "published": true
+    },
+    {
+      "slug": "off-duty",
+      "title": "Off duty",
+      "category": "editorial",
+      "location": "",
+      "year": "",
+      "cover": "surf-1146",
+      "photos": [
+        "surf-1146",
+        "surf-1012",
+        "surf-1024",
+        "surf-0997",
+        "surf-0926"
+      ],
+      "description": "A suit at the shoreline. A bright surfboard, warm light and a change of pace.",
       "credits": [],
       "published": true
     },
@@ -100,25 +349,52 @@
       "category": "editorial",
       "location": "",
       "year": "",
-      "cover": "selin",
+      "cover": "bamboo-4356",
       "photos": [
+        "bamboo-4356",
+        "bamboo-4261",
+        "bamboo-4296",
+        "bamboo-4339",
         "selin"
       ],
-      "description": "A selected cover for Selin Magazine. Portraiture in conversation with the textures of the urban jungle.",
+      "description": "Bamboo, dappled light and burgundy leather. A portrait series with a selected cover for Selin Magazine.",
+      "credits": [],
+      "published": true
+    },
+    {
+      "slug": "in-her-own-lane",
+      "title": "In her own lane",
+      "category": "portrait",
+      "location": "",
+      "year": "",
+      "cover": "car-0205",
+      "photos": [
+        "car-0205",
+        "car",
+        "car-0268",
+        "car-0276",
+        "car-0278"
+      ],
+      "description": "An open car door, desert air and a flash of lime green. Portraits between stillness and movement.",
       "credits": [],
       "published": true
     },
     {
       "slug": "gezno-magazine",
-      "title": "GEZNO Magazine",
+      "title": "Neon notes",
       "category": "editorial",
       "location": "",
       "year": "",
-      "cover": "gezno",
+      "cover": "night-1743",
       "photos": [
+        "night-1743",
+        "night-1525",
+        "night-2103",
+        "night-1618",
+        "fence",
         "gezno"
       ],
-      "description": "Selected cover photography for GEZNO Magazine.",
+      "description": "Silver sunglasses, black leather and direct flash. Night portraits with a selected cover for GEZNO Magazine.",
       "credits": [],
       "published": true
     },
@@ -128,11 +404,30 @@
       "category": "personal",
       "location": "",
       "year": "",
-      "cover": "desert",
+      "cover": "desert-9413",
       "photos": [
+        "desert-9413",
+        "desert-9401",
         "desert"
       ],
-      "description": "A personal study of desert light, open space and an unhurried moment.",
+      "description": "Mirrored lenses, a white chair and the last light over the desert.",
+      "credits": [],
+      "published": true
+    },
+    {
+      "slug": "off-the-beaten-path",
+      "title": "Off the beaten path",
+      "category": "editorial",
+      "location": "",
+      "year": "",
+      "cover": "pool",
+      "photos": [
+        "pool",
+        "city-6981",
+        "city-7399",
+        "city-6984"
+      ],
+      "description": "A black blazer moves through red columns, hanging lanterns and an unexpected turquoise pool.",
       "credits": [],
       "published": true
     }

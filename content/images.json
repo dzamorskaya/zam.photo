@@ -169,5 +169,651 @@
       }
     ],
     "src": "/images/selin-1270.webp"
+  },
+  "series-hollywood": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-hollywood-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-hollywood-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-hollywood-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-hollywood-1600.webp"
+  },
+  "series-hollywood-9389": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-hollywood-9389-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-hollywood-9389-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-hollywood-9389-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-hollywood-9389-1600.webp"
+  },
+  "series-hollywood-9601": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-hollywood-9601-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-hollywood-9601-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-hollywood-9601-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-hollywood-9601-1600.webp"
+  },
+  "series-hollywood-9559": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-hollywood-9559-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-hollywood-9559-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-hollywood-9559-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-hollywood-9559-1600.webp"
+  },
+  "series-violet-6467": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-violet-6467-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-violet-6467-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-violet-6467-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-violet-6467-1600.webp"
+  },
+  "series-violet-6461": {
+    "width": 3974,
+    "height": 5961,
+    "variants": [
+      {
+        "src": "/images/series-violet-6461-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-violet-6461-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-violet-6461-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-violet-6461-1600.webp"
+  },
+  "series-violet-6462": {
+    "width": 3915,
+    "height": 5872,
+    "variants": [
+      {
+        "src": "/images/series-violet-6462-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-violet-6462-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-violet-6462-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-violet-6462-1600.webp"
+  },
+  "series-violet-6466": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-violet-6466-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-violet-6466-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-violet-6466-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-violet-6466-1600.webp"
+  },
+  "series-violet-6463": {
+    "width": 3867,
+    "height": 5801,
+    "variants": [
+      {
+        "src": "/images/series-violet-6463-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-violet-6463-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-violet-6463-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-violet-6463-1600.webp"
+  },
+  "series-surf-1146": {
+    "width": 3837,
+    "height": 5755,
+    "variants": [
+      {
+        "src": "/images/series-surf-1146-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-surf-1146-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-surf-1146-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-surf-1146-1600.webp"
+  },
+  "series-surf-1012": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-surf-1012-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-surf-1012-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-surf-1012-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-surf-1012-1600.webp"
+  },
+  "series-surf-1024": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-surf-1024-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-surf-1024-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-surf-1024-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-surf-1024-1600.webp"
+  },
+  "series-surf-0997": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-surf-0997-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-surf-0997-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-surf-0997-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-surf-0997-1600.webp"
+  },
+  "series-surf-0926": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-surf-0926-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-surf-0926-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-surf-0926-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-surf-0926-1600.webp"
+  },
+  "series-bamboo-4356": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-bamboo-4356-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-bamboo-4356-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-bamboo-4356-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-bamboo-4356-1600.webp"
+  },
+  "series-bamboo-4261": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-bamboo-4261-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-bamboo-4261-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-bamboo-4261-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-bamboo-4261-1600.webp"
+  },
+  "series-bamboo-4296": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-bamboo-4296-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-bamboo-4296-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-bamboo-4296-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-bamboo-4296-1600.webp"
+  },
+  "series-bamboo-4339": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-bamboo-4339-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-bamboo-4339-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-bamboo-4339-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-bamboo-4339-1600.webp"
+  },
+  "series-car-0205": {
+    "width": 3998,
+    "height": 5997,
+    "variants": [
+      {
+        "src": "/images/series-car-0205-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-car-0205-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-car-0205-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-car-0205-1600.webp"
+  },
+  "series-car": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-car-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-car-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-car-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-car-1600.webp"
+  },
+  "series-car-0268": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-car-0268-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-car-0268-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-car-0268-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-car-0268-1600.webp"
+  },
+  "series-car-0276": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-car-0276-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-car-0276-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-car-0276-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-car-0276-1600.webp"
+  },
+  "series-car-0278": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-car-0278-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-car-0278-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-car-0278-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-car-0278-1600.webp"
+  },
+  "series-night-1743": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-night-1743-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-night-1743-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-night-1743-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-night-1743-1600.webp"
+  },
+  "series-night-1525": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-night-1525-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-night-1525-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-night-1525-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-night-1525-1600.webp"
+  },
+  "series-night-2103": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-night-2103-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-night-2103-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-night-2103-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-night-2103-1600.webp"
+  },
+  "series-night-1618": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-night-1618-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-night-1618-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-night-1618-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-night-1618-1600.webp"
+  },
+  "series-desert-9413": {
+    "width": 3760,
+    "height": 5641,
+    "variants": [
+      {
+        "src": "/images/series-desert-9413-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-desert-9413-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-desert-9413-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-desert-9413-1600.webp"
+  },
+  "series-desert-9401": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-desert-9401-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-desert-9401-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-desert-9401-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-desert-9401-1600.webp"
+  },
+  "series-desert": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-desert-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-desert-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-desert-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-desert-1600.webp"
+  },
+  "series-pool": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-pool-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-pool-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-pool-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-pool-1600.webp"
+  },
+  "series-city-6981": {
+    "width": 3897,
+    "height": 5846,
+    "variants": [
+      {
+        "src": "/images/series-city-6981-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-city-6981-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-city-6981-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-city-6981-1600.webp"
+  },
+  "series-city-7399": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/series-city-7399-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-city-7399-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-city-7399-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-city-7399-1600.webp"
+  },
+  "series-city-6984": {
+    "width": 3455,
+    "height": 5182,
+    "variants": [
+      {
+        "src": "/images/series-city-6984-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/series-city-6984-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/series-city-6984-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/series-city-6984-1600.webp"
   }
 }
