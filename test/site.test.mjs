@@ -91,7 +91,7 @@ test('Hidden violet series and empty portfolio categories stay out of public pag
 });
 test('Service FAQs and author biography do not substitute unrelated content',()=>{
  const commercial=pages.get('/commercial-photography-los-angeles/');assert.ok(commercial.includes('How is commercial usage priced?'));assert.ok(!commercial.includes('Do I need modelling experience?'));
- assert.ok(!/<div class="about-image">/.test(pages.get('/about/')));
+ const withoutPortrait=structuredClone(data);withoutPortrait.settings.portraitImage='';withoutPortrait.settings.aboutSecondaryImage='';assert.ok(!/<div class="about-image">/.test(renderSite(withoutPortrait,manifest).get('/about/')));
  assert.ok(pages.get('/headshots-los-angeles/').includes('How many looks can I bring?'));
 });
 test('Inquiry form uses native provider protection; activation gate never claims success',()=>{

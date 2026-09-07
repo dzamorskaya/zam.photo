@@ -53,8 +53,7 @@ is included in final selected images. The violet series remains unpublished.
 
 The native FormSubmit form is prepared in `src/render.mjs`. Its recipient is
 `settings.email`. The owner confirmed activation; FormSubmit accepted a labelled verification
-submission with `success: true`. `settings.formEnabled` is now true. Actual
-iCloud receipt and the native client auto-response still need inbox confirmation.
+submission with `success: true`. `settings.formEnabled` is now true. The owner confirmed iCloud receipt. The native client auto-response still needs inbox confirmation.
 
 After the owner clicks **Activate Form**, enable the form locally and test one
 clearly labelled submission with the owner. Verify both the owner notification
@@ -70,9 +69,8 @@ implemented on this static GitHub Pages site. This portion of the brief remains
 open if stricter server-side validation is required. Never claim an email was
 delivered based only on a local success screen or a mocked test.
 
-Analytics events are wired but no GA measurement ID is configured. Real client
-reviews, an actual photographer portrait and verified publication issue dates /
-external links are still awaiting owner-provided material. Do not fill these
+Analytics events are wired but no GA measurement ID is configured. Two owner-provided photographs now appear on About. Real client
+reviews and verified publication issue dates / external links are still awaiting owner-provided material. Do not fill these
 with invented content or portfolio models.
 
 Verification: `npm test` covers routes, approved pricing, unpublished work,

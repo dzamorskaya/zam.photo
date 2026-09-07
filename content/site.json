@@ -9,11 +9,12 @@
     "location": "Los Angeles, California",
     "analyticsId": "",
     "about": "I’m Daria, a Los Angeles-based photographer working across portrait, headshots, personal branding, fashion, editorial and commercial photography.",
-    "portraitImage": "",
+    "portraitImage": "daria-zamorskaia-portrait",
     "heroImage": "",
     "heroProject": "",
     "showJournalInNav": false,
-    "formEnabled": true
+    "formEnabled": true,
+    "aboutSecondaryImage": "daria-zamorskaia-at-work"
   },
   "photos": [
     {
@@ -288,6 +289,20 @@
       "title": "Neon notes",
       "category": "personal",
       "alt": "Night portrait beneath neon lights"
+    },
+    {
+      "id": "daria-zamorskaia-portrait",
+      "image": "daria-zamorskaia-portrait",
+      "title": "Daria Zamorskaia",
+      "category": "personal",
+      "alt": "Portrait of photographer Daria Zamorskaia in a denim jacket, seated in a car in warm sunlight"
+    },
+    {
+      "id": "daria-zamorskaia-at-work",
+      "image": "daria-zamorskaia-at-work",
+      "title": "Behind the camera",
+      "category": "personal",
+      "alt": "Daria Zamorskaia photographing outdoors beside a lake and mountains"
     }
   ],
   "projects": [

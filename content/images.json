@@ -815,5 +815,43 @@
       }
     ],
     "src": "/images/series-city-6984-1600.webp"
+  },
+  "daria-zamorskaia-portrait": {
+    "width": 3024,
+    "height": 4032,
+    "variants": [
+      {
+        "src": "/images/daria-zamorskaia-portrait-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/daria-zamorskaia-portrait-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/daria-zamorskaia-portrait-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/daria-zamorskaia-portrait-1600.webp"
+  },
+  "daria-zamorskaia-at-work": {
+    "width": 4284,
+    "height": 5712,
+    "variants": [
+      {
+        "src": "/images/daria-zamorskaia-at-work-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/daria-zamorskaia-at-work-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/daria-zamorskaia-at-work-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/daria-zamorskaia-at-work-1600.webp"
   }
 }
