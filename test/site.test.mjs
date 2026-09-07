@@ -8,9 +8,8 @@ const data=JSON.parse(await readFile(join(root,'content/site.json'),'utf8'));
 const manifest=JSON.parse(await readFile(join(root,'content/images.json'),'utf8'));
 const pages=renderSite(data,manifest);
 await build();
-test('All internal pages and assets resolve; site has no enquiry forms',async()=>{
+test('All internal pages and assets resolve; each page has one heading and canonical',async()=>{
  for(const[path,html]of pages){
-  assert.ok(!/<form\b/i.test(html),path+' contains a form');
   assert.equal((html.match(/<h1>/g)||[]).length,1,path+' must have one h1');
   assert.ok(html.includes(`rel="canonical" href="${data.settings.domain}${path}"`));
   assert.ok(html.includes(`mailto:${data.settings.email}`));
@@ -52,15 +51,15 @@ test('Hero photo can be selected independently and links to its own project',()=
 test('Empty journal is omitted from main navigation',()=>{
  const d=structuredClone(data);d.journal.forEach(j=>j.published=false);
  const nav=renderSite(d,manifest).get('/').match(/<nav id="main-nav".*?<\/nav>/)[0];
- assert.ok(!nav.includes('href="/journal/"'));assert.ok(nav.includes('Book a shoot'));
+ assert.ok(!nav.includes('href="/journal/"'));assert.ok(nav.includes('Book a Shoot'));
 });
 test('Direct contact links include email, Instagram and callable phone',()=>{
  const contact=pages.get('/contact/');
  for(const target of ['mailto:dzamorskaya@icloud.com','https://instagram.com/zam.photo','tel:+14248447381'])assert.ok(contact.includes('href="'+target+'"'));
  assert.ok(contact.includes('+1 424 844 7381'));
 });
-test('No unconfirmed testimonials, prices or removed positioning on any public page',()=>{
- for(const [path,html]of pages){assert.ok(!/Sofia M\.|James K\.|Elena (?:&amp;|&) Marcus|\bcouples\b|love story|\bengagement\b|\bwedding\b|\$350|\$600/i.test(html),path);assert.ok(!html.includes('class="quotes"'),path);}
+test('No unconfirmed testimonials or removed positioning on any public page',()=>{
+ for(const [path,html]of pages){assert.ok(!/Sofia M\.|James K\.|Elena (?:&amp;|&) Marcus|\bcouples\b|love story|\bengagement\b|\bwedding\b/i.test(html),path);assert.ok(!html.includes('class="quotes"'),path);}
 });
 test('Pricing only displays owner-approved amounts and commercial stays quote-based',()=>{
  const d=structuredClone(data);d.services[0].price='Starting at $999';d.services[0].priceApproved=false;
@@ -74,5 +73,34 @@ test('Journal URLs remain available while absent from navigation',()=>{
  for(const html of pages.values())assert.ok(!html.match(/<nav id="main-nav".*?<\/nav>/)[0].includes('/journal/'));
 });
 test('Headshots has no unrelated portfolio imagery or made-up session facts',()=>{
- const html=pages.get('/headshots-los-angeles/');assert.ok(!/<img src=/.test(html));assert.ok(!html.includes('property="og:image"'));assert.ok(html.includes('Inquire for Pricing'));
+ const html=pages.get('/headshots-los-angeles/');assert.ok(!/<img src=/.test(html));assert.ok(html.includes('property="og:image"'));assert.ok(html.includes('Starting at $300'));assert.ok(html.includes('Up to 45 minutes'));
+});
+test('Confirmed PDF packages are consistent between pricing and service pages',()=>{
+ for(const [category,price,count] of [['portrait','$350','10'],['headshots','$300','3'],['branding','$500','15'],['editorial','$600','20']]){
+  const service=data.services.find(s=>s.category===category);
+  for(const route of ['/pricing/',`/${service.slug}/`]){
+   const html=pages.get(route);assert.ok(html.includes('Starting at '+price),route);assert.ok(html.includes(count+' professionally retouched images'),route);
+  }
+ }
+ assert.ok(pages.get('/pricing/').includes('Studio rental, if needed, is paid separately'));
+});
+test('Hidden violet series and empty portfolio categories stay out of public pages',()=>{
+ assert.equal(data.projects.filter(p=>p.published!==false).length,7);
+ for(const html of pages.values())assert.ok(!html.includes('violet-')&&!html.includes('Violet hour'));
+ const work=pages.get('/work/');for(const category of ['headshots','branding','commercial'])assert.ok(!work.includes(`data-filter="${category}"`));
+});
+test('Service FAQs and author biography do not substitute unrelated content',()=>{
+ const commercial=pages.get('/commercial-photography-los-angeles/');assert.ok(commercial.includes('How is commercial usage priced?'));assert.ok(!commercial.includes('Do I need modelling experience?'));
+ assert.ok(!/<div class="about-image">/.test(pages.get('/about/')));
+ assert.ok(pages.get('/headshots-los-angeles/').includes('How many looks can I bring?'));
+});
+test('Inquiry form uses native provider protection; activation gate never claims success',()=>{
+ const d=structuredClone(data);d.settings.formEnabled=true;
+ const html=renderSite(d,manifest).get('/contact/');
+ assert.ok(html.includes('action="https://formsubmit.co/dzamorskaya@icloud.com" method="POST"'));
+ for(const name of ['name','email','type','message','_autoresponse','_honey','submitted_at'])assert.ok(html.includes(`name="${name}"`));
+ assert.ok(!html.includes('name="_captcha"'));assert.ok(html.includes('fieldset class="commercial-fields"'));
+ d.settings.formEnabled=false;assert.ok(renderSite(d,manifest).get('/contact/').includes('type="submit" disabled'));
+ assert.ok(!pages.get('/contact/thank-you/').includes('Your inquiry is on its way.'));
+ assert.ok(pages.get('/contact/thank-you/').includes('noindex,follow'));
 });

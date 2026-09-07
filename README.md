@@ -40,3 +40,43 @@
 В разделе «Контакты и настройки» доступны «Фото на первом экране» и «Проект первого экрана». Пустые значения используют первый опубликованный проект и его обложку. Если выбранное фото относится к другой серии, ссылка автоматически ведёт к серии, содержащей этот снимок. Фото без проекта ведёт в портфолио. Journal сохранён по прежним URL, но скрыт из меню. Для возврата нужны минимум три опубликованные статьи и включённая настройка «Показывать Journal в меню».
 
 Основной шрифт Instrument Sans размещается локально в `src/fonts/` и копируется в `assets/fonts/`. Лицензия OFL включена. Horizon из Canva пока не подключён: ожидается файл шрифта или SVG логотипа ZAM. Временный wordmark использует Instrument Sans. Внешние запросы к Google Fonts при посещении сайта не нужны.
+
+## September 2026 website brief
+
+Approved package terms are in `content/site.json`: Portrait $350 / 10 images,
+Headshots $300 / 3 images, Personal Branding $500 / 15 images, creative
+Fashion & Editorial $600 / 20 images. All four are starting prices. Commercial
+work is quoted separately. Studio rental is separate; professional retouching
+is included in final selected images. The violet series remains unpublished.
+
+### Inquiry form activation
+
+The native FormSubmit form is prepared in `src/render.mjs`. Its recipient is
+`settings.email`. An activation request was sent to the owner's iCloud address.
+`settings.formEnabled` remains false until activation and delivery are verified;
+the public page offers direct email contact while the form is hidden.
+
+After the owner clicks **Activate Form**, enable the form locally and test one
+clearly labelled submission with the owner. Verify both the owner notification
+and client confirmation before publishing the enabled configuration. Keep
+reCAPTCHA enabled: FormSubmit does not send auto-responses for AJAX submissions
+or when reCAPTCHA is disabled. Do not send tests to unrelated email addresses.
+
+The browser validates required fields and email, conditionally disables
+commercial fields, and retains a per-tab draft for up to two hours. Provider
+errors preserve that draft on return to the form. The external provider handles
+spam protection; custom server-side validation of every business field is not
+implemented on this static GitHub Pages site. This portion of the brief remains
+open if stricter server-side validation is required. Never claim an email was
+delivered based only on a local success screen or a mocked test.
+
+Analytics events are wired but no GA measurement ID is configured. Real client
+reviews, an actual photographer portrait and verified publication issue dates /
+external links are still awaiting owner-provided material. Do not fill these
+with invented content or portfolio models.
+
+Verification: `npm test` covers routes, approved pricing, unpublished work,
+service FAQs, activation gating and metadata. Browser checks additionally cover
+mobile layouts, native form payloads, offline / service failure recovery,
+service prefill and publication lightboxes. Test interceptions do not establish
+real email delivery.

@@ -8,11 +8,12 @@
     "instagram": "https://instagram.com/zam.photo",
     "location": "Los Angeles, California",
     "analyticsId": "",
-    "about": "Daria Zamorskaia is a Los Angeles-based photographer specializing in portrait, headshots, personal branding, fashion, editorial and commercial photography.",
+    "about": "I’m Daria, a Los Angeles-based photographer working across portrait, headshots, personal branding, fashion, editorial and commercial photography.",
     "portraitImage": "",
     "heroImage": "",
     "heroProject": "",
-    "showJournalInNav": false
+    "showJournalInNav": false,
+    "formEnabled": false
   },
   "photos": [
     {
@@ -442,13 +443,13 @@
       "description": "Editorial-inspired portrait photography for individuals, artists and creatives. A considered image that still feels like you.",
       "image": "car",
       "category": "portrait",
-      "price": "",
-      "duration": "",
-      "looks": "",
-      "images": "",
-      "turnaround": "",
-      "location": "",
-      "extraImages": "",
+      "price": "$350",
+      "duration": "Up to 1 hour",
+      "looks": "Up to 2 looks",
+      "images": "10 professionally retouched images",
+      "turnaround": "5–7 days",
+      "location": "1 location",
+      "extraImages": "$25 per additional retouched image",
       "audiences": [
         "Individuals",
         "Artists",
@@ -458,7 +459,8 @@
         "Personal direction throughout the session",
         "Location suggestions",
         "Professional retouching",
-        "A curated final gallery"
+        "A curated final gallery",
+        "Private online gallery for image selection"
       ],
       "process": [
         "Share your ideas and the purpose of the photographs.",
@@ -466,7 +468,27 @@
         "Shoot with guidance, then receive your retouched selection."
       ],
       "published": true,
-      "priceApproved": false
+      "priceApproved": true,
+      "cta": "Check Availability",
+      "priceMode": "starting",
+      "faq": [
+        {
+          "question": "What should I wear?",
+          "answer": "Bring up to two looks that feel like you. We can discuss colours, textures and visual references while planning."
+        },
+        {
+          "question": "Can you help choose a location?",
+          "answer": "Yes. We discuss location ideas and choose one setting for the session. Studio rental, if needed, is paid separately."
+        },
+        {
+          "question": "Do I need modelling experience?",
+          "answer": "No. You’ll receive direction and posing guidance throughout the session."
+        },
+        {
+          "question": "Is retouching included?",
+          "answer": "Professional retouching is included in all final selected images. This includes colour correction, skin-tone adjustments, temporary imperfections and final image preparation. Complex beauty retouching is scoped separately."
+        }
+      ]
     },
     {
       "slug": "headshots-los-angeles",
@@ -477,13 +499,13 @@
       "description": "Contemporary headshots for actors, models, entrepreneurs, professionals and creatives. Focused photographs for the way you want to be seen.",
       "image": "",
       "category": "headshots",
-      "price": "",
-      "duration": "",
-      "looks": "",
-      "images": "",
-      "turnaround": "",
+      "price": "$300",
+      "duration": "Up to 45 minutes",
+      "looks": "Up to 2 looks",
+      "images": "3 professionally retouched images",
+      "turnaround": "3–5 days",
       "location": "",
-      "extraImages": "",
+      "extraImages": "$25 per additional retouched image",
       "audiences": [
         "Actors",
         "Models",
@@ -495,7 +517,8 @@
         "A discussion of your intended use",
         "Look and background planning",
         "Direction throughout the shoot",
-        "Professional retouching"
+        "Professional retouching",
+        "Private online gallery for image selection"
       ],
       "process": [
         "Tell me where your headshots will be used.",
@@ -503,7 +526,27 @@
         "Create a focused selection with clear, expressive portraits."
       ],
       "published": true,
-      "priceApproved": false
+      "priceApproved": true,
+      "cta": "Book Headshots",
+      "priceMode": "starting",
+      "faq": [
+        {
+          "question": "Do you photograph actors?",
+          "answer": "Yes. Headshots are available for actors, models, entrepreneurs, creatives and professionals. Tell me how the images will be used so we can plan the right direction."
+        },
+        {
+          "question": "How many looks can I bring?",
+          "answer": "The starting package includes up to two looks in a session of up to 45 minutes."
+        },
+        {
+          "question": "When will I receive my headshots?",
+          "answer": "The package includes three professionally retouched final images, delivered digitally in 3–5 days. Additional retouched images are $25 each."
+        },
+        {
+          "question": "Is retouching included?",
+          "answer": "Professional retouching is included in all final selected images. This includes colour correction, skin-tone adjustments, temporary imperfections and final image preparation. Complex beauty retouching is scoped separately."
+        }
+      ]
     },
     {
       "slug": "personal-branding-photographer-los-angeles",
@@ -514,11 +557,11 @@
       "description": "A visual story for your business. Beyond a single headshot: portraits, working moments and lifestyle imagery for your website, social media, press and marketing.",
       "image": "",
       "category": "branding",
-      "price": "",
-      "duration": "",
-      "looks": "",
-      "images": "",
-      "turnaround": "",
+      "price": "$500",
+      "duration": "Up to 90 minutes",
+      "looks": "2–3 looks",
+      "images": "15 professionally retouched images",
+      "turnaround": "Up to 7 days",
       "location": "",
       "extraImages": "",
       "audiences": [
@@ -538,7 +581,23 @@
         "Create a cohesive content library with a consistent visual identity."
       ],
       "published": true,
-      "priceApproved": false
+      "priceApproved": true,
+      "cta": "Request a Branding Proposal",
+      "priceMode": "starting",
+      "faq": [
+        {
+          "question": "Can we plan content for my website and social media?",
+          "answer": "Yes. Planning includes a shot list and horizontal and vertical formats, from portraits and website banners to working moments and lifestyle imagery."
+        },
+        {
+          "question": "Can I include different outfits and locations?",
+          "answer": "The starting session includes 2–3 looks. We plan locations around your shot list and the session length; additional production is discussed before booking."
+        },
+        {
+          "question": "Is retouching included?",
+          "answer": "Professional retouching is included in all final selected images. This includes colour correction, skin-tone adjustments, temporary imperfections and final image preparation. Complex beauty retouching is scoped separately."
+        }
+      ]
     },
     {
       "slug": "fashion-editorial-photographer-los-angeles",
@@ -546,14 +605,14 @@
       "seoTitle": "Los Angeles Fashion & Editorial Photographer | Daria Zamorskaia",
       "heading": "Fashion & editorial",
       "subtitle": "Image with intention",
-      "description": "Fashion editorials, model portfolios, lookbooks and creative campaigns. Strong composition, contemporary styling and a distinctive point of view.",
+      "description": "Creative editorials and portfolio sessions for models and creatives. For brands, designers, lookbooks and campaigns, production and commercial usage are quoted separately.",
       "image": "pool",
       "category": "editorial",
-      "price": "",
-      "duration": "",
-      "looks": "",
-      "images": "",
-      "turnaround": "",
+      "price": "$600",
+      "duration": "2–3 hours",
+      "looks": "2–3 looks",
+      "images": "20 professionally retouched images",
+      "turnaround": "Up to 7 days",
       "location": "",
       "extraImages": "",
       "audiences": [
@@ -574,7 +633,23 @@
         "Produce a cohesive series from shoot to final retouch."
       ],
       "published": true,
-      "priceApproved": false
+      "priceApproved": true,
+      "cta": "Plan a Shoot",
+      "priceMode": "starting",
+      "faq": [
+        {
+          "question": "Who is the starting package for?",
+          "answer": "The $600 starting package is for models and creative editorials. It is not a commercial campaign rate or a commercial image licence."
+        },
+        {
+          "question": "Can a brand commission a lookbook or campaign?",
+          "answer": "Yes. Send a commercial brief with your deliverables, production needs and intended usage for a separate quote."
+        },
+        {
+          "question": "Is retouching included?",
+          "answer": "Professional retouching is included in all final selected images. This includes colour correction, skin-tone adjustments, temporary imperfections and final image preparation. Complex beauty retouching is scoped separately."
+        }
+      ]
     },
     {
       "slug": "commercial-photography-los-angeles",
@@ -610,7 +685,27 @@
         "Create the campaign and deliver the agreed final assets."
       ],
       "published": true,
-      "priceApproved": false
+      "priceApproved": false,
+      "cta": "Request a Quote",
+      "priceMode": "quote",
+      "faq": [
+        {
+          "question": "How is commercial usage priced?",
+          "answer": "Usage and licensing are scoped for each project. Include the intended channels, usage period and territory in your brief."
+        },
+        {
+          "question": "Can you work with creative teams and agencies?",
+          "answer": "Yes. Share your team, creative direction and production requirements so we can define responsibilities and scope."
+        },
+        {
+          "question": "Can you quote custom production?",
+          "answer": "Yes. Quotes depend on production, deliverables and usage. Include your timeline, location, campaign type and required final assets."
+        },
+        {
+          "question": "Is retouching included?",
+          "answer": "Professional retouching is included in all final selected images. This includes colour correction, skin-tone adjustments, temporary imperfections and final image preparation. Complex beauty retouching is scoped separately."
+        }
+      ]
     }
   ],
   "publications": [
@@ -648,28 +743,32 @@
   ],
   "faq": [
     {
-      "question": "Where do you photograph?",
-      "answer": "I am based in Los Angeles. Sessions take place in the city and surrounding areas; travel can be discussed for a specific project."
+      "question": "Where are you based?",
+      "answer": "I’m based in Los Angeles, California, and available for selected travel projects. Include your location when you inquire."
     },
     {
-      "question": "I have never been photographed professionally. Is that okay?",
-      "answer": "Yes. Portrait sessions include direction and posing guidance. We can discuss the mood and purpose of the photographs before the shoot."
+      "question": "Do I need modelling experience?",
+      "answer": "No. I help with direction, posing and visual planning throughout the shoot."
+    },
+    {
+      "question": "How far ahead should I book?",
+      "answer": "Send your preferred date as early as you can. Availability is confirmed personally before booking."
     },
     {
       "question": "Is retouching included?",
-      "answer": "Professional retouching is available. The image selection and retouching scope are agreed directly before booking. For standalone retouching, get in touch with your images and requirements."
+      "answer": "Professional retouching is included in all final selected images. Colour correction, skin-tone adjustments, temporary imperfections and final preparation are included; complex beauty retouching is scoped separately."
+    },
+    {
+      "question": "How are final images delivered?",
+      "answer": "Final photographs are delivered digitally. Portrait delivery is 5–7 days, headshots 3–5 days, and branding and creative editorial sessions up to 7 days."
+    },
+    {
+      "question": "Is a studio included?",
+      "answer": "Studio rental, if needed, is paid separately."
     },
     {
       "question": "How do I book?",
-      "answer": "Email dzamorskaya@icloud.com or send a message to @zam.photo on Instagram. Tell me the type of shoot, your preferred timing and any ideas or references."
-    },
-    {
-      "question": "What is the difference between headshots and personal branding?",
-      "answer": "Headshots focus on a clear portrait for professional or casting use. Personal branding develops a wider visual library: portraits, working moments, lifestyle images and different formats for your business."
-    },
-    {
-      "question": "Can brands request a custom quote?",
-      "answer": "Yes. Send your brief, deliverables, timeline and intended image usage. Production, licensing and post-production can then be scoped for the project."
+      "answer": "Send an inquiry with the type of shoot, your preferred timing and your ideas. I’ll reply with availability, pricing and the next steps. Your booking and final scope are confirmed personally."
     }
   ]
 }

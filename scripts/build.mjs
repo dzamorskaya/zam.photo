@@ -6,6 +6,7 @@ export const root = resolve(fileURLToPath(new URL('..',import.meta.url)));
 export function validate(d,m) {
  if(!d.settings?.email || !/^https:\/\/[^/]+$/.test(d.settings.domain)) throw Error('A valid email and HTTPS domain are required');
  for(const key of ['projects','services','journal']) { const seen=new Set(); for(const p of d[key]) {if(!slugOK(p.slug)||seen.has(p.slug)) throw Error(`Invalid or duplicate slug in ${key}`);seen.add(p.slug);} }
+ for(const service of d.services){if(service.priceMode&&!['starting','fixed','custom','quote'].includes(service.priceMode))throw Error('Unknown price display mode');if(service.faq&&(!Array.isArray(service.faq)||service.faq.some(f=>typeof f.question!=='string'||typeof f.answer!=='string')))throw Error('Service FAQ requires questions and answers');}
  const ids = new Set(d.photos.map(p=>p.id));
  if(ids.size!==d.photos.length)throw Error('Duplicate photo IDs');
  if(d.settings.heroImage&&!ids.has(d.settings.heroImage))throw Error('Hero photograph is missing');
@@ -25,7 +26,7 @@ export async function build(out=join(root,'.preview')) {
  for(const f of ['site.css','site.js','mark.svg'])await cp(join(root,'src',f),join(out,'assets',f));
  await writeFile(join(out,'404.html'),pages.get('/404/'));
  await writeFile(join(out,'robots.txt'),`User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: ${d.settings.domain}/sitemap.xml\n`);
- await writeFile(join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...pages.keys()].filter(p=>p!=='/404/').map(p=>`<url><loc>${d.settings.domain}${p}</loc></url>`).join('')}</urlset>`);
+ await writeFile(join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[...pages.keys()].filter(p=>p!=='/404/'&&p!=='/contact/thank-you/').map(p=>`<url><loc>${d.settings.domain}${p}</loc></url>`).join('')}</urlset>`);
  await writeFile(join(out,'.generated.json'),JSON.stringify([...pages.keys()]));await writeFile(join(out,'.nojekyll'),'');
  return pages.size;
 }
