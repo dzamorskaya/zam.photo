@@ -2,7 +2,7 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#m
 menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('is-open',open);});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('is-open')){menu.click();menu.focus();}});
 const filters=[...document.querySelectorAll('[data-filter]')],gallery=document.querySelector('[data-gallery]');
-filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;gallery.querySelectorAll('[data-category]').forEach(item=>{item.hidden=button.dataset.filter!=='all'&&item.dataset.category!==button.dataset.filter;if(!item.hidden)count++;});document.querySelector('.empty-gallery').hidden=count>0;}));
+filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));gallery.querySelectorAll('[data-category]').forEach(item=>{item.hidden=button.dataset.filter!=='all'&&item.dataset.category!==button.dataset.filter;});}));
 const dialog=document.querySelector('#lightbox');let current=0,links=[],opener;
 const show=()=>{const a=links[current];if(!a)return;dialog.querySelector('img').src=a.href;dialog.querySelector('img').alt=a.querySelector('img').alt;dialog.querySelector('p').textContent=`${a.dataset.title} — ${current+1} / ${links.length}`;dialog.querySelectorAll('.lightbox-prev,.lightbox-next').forEach(b=>b.hidden=links.length<2);};
 document.querySelectorAll('[data-lightbox]').forEach(a=>a.addEventListener('click',e=>{if(!dialog.showModal)return;e.preventDefault();opener=a;links=[...a.closest('.photo-grid,[data-lightbox-group]').querySelectorAll('[data-lightbox]')].filter(v=>!v.closest('[hidden]'));current=links.indexOf(a);show();dialog.showModal();document.body.style.overflow='hidden';}));
@@ -92,7 +92,8 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
  if(document.body.dataset.page==='inquiry-confirmation'){
   const receipt=new URLSearchParams(location.search).get('submission');
   if(fresh(pendingSubmission)&&receipt&&receipt===pendingSubmission.receipt){
-   document.querySelector('#inquiry-confirmation').textContent='Thank you. Your inquiry is on its way. I’ll review the details and get back to you within 24 hours.';
+   document.querySelector('h1').textContent='Thank you. Your inquiry is on its way.';
+   document.querySelector('#inquiry-confirmation').textContent='I’ll review the details and get back to you within 24 hours.';
    track('contact_form_submit');remove(key);remove(pending);history.replaceState(null,'',location.pathname);
   }
  }
@@ -103,21 +104,27 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
  }));
  if(!form)return;
  const status=document.querySelector('#form-status'),commercial=document.querySelector('#commercial-fields');
+ const showError=()=>{status.textContent='Something went wrong. Please try again or email me directly at dzamorskaya@icloud.com.';status.setAttribute('role','alert');};
  const controls=[...form.querySelectorAll('.form-grid input,.form-grid textarea,.form-grid select')];
  const draft=read(key);
- if(fresh(draft)){controls.forEach(el=>{if(typeof draft.values?.[el.name]==='string')el.value=draft.values[el.name];});}else remove(key);
+ if(fresh(draft)){controls.forEach(el=>{if(el.type==='checkbox')el.checked=draft.values?.[el.name]===true;else if(typeof draft.values?.[el.name]==='string')el.value=draft.values[el.name];});}else remove(key);
  const requestedType=read('zam-inquiry-type');
  if(fresh(requestedType))form.elements.type.value=requestedType.value;
+ const queryType=new URLSearchParams(location.search).get('type');
+ if([...form.elements.type.options].some(option=>option.value===queryType))form.elements.type.value=queryType;
  remove('zam-inquiry-type');
  function commercialFields(){const show=form.elements.type.value==='Commercial';commercial.hidden=!show;commercial.disabled=!show;}
  commercialFields();form.elements.type.addEventListener('change',commercialFields);
- function save(){write(key,{time:Date.now(),values:Object.fromEntries(controls.map(el=>[el.name,el.value]))});}
+ const flexible=form.elements.flexible_dates,date=form.elements.date;
+ function flexibleDates(){date.disabled=flexible.checked;}
+ flexibleDates();flexible.addEventListener('change',flexibleDates);
+ function save(){write(key,{time:Date.now(),values:Object.fromEntries(controls.map(el=>[el.name,el.type==='checkbox'?el.checked:el.value]))});}
  let started=false;
  form.addEventListener('input',()=>{save();if(!started){started=true;track('contact_form_start');}});
  form.addEventListener('change',save);
  form.addEventListener('submit',event=>{
   if(form.dataset.enabled!=='true'){event.preventDefault();return;}
-  if(!navigator.onLine){event.preventDefault();status.textContent='You appear to be offline. Your details are still here. Reconnect and try again, or contact me by email.';return;}
+  if(!navigator.onLine){event.preventDefault();save();showError();return;}
   for(const name of ['name','email','message'])form.elements[name].value=form.elements[name].value.trim();
   if(!form.reportValidity()){event.preventDefault();return;}
   save();form.elements.submitted_at.value=new Date().toISOString();const receipt=crypto.randomUUID();const next=new URL(form.elements._next.value);next.searchParams.set('submission',receipt);form.elements._next.value=next.href;write(pending,{time:Date.now(),receipt});
@@ -125,6 +132,6 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
   // Native submission preserves provider spam protection and the client auto-response.
  });
  addEventListener('pageshow',()=>{
-  if(fresh(read(pending)))status.textContent='Your details have been restored. If you did not receive confirmation, you can try sending again or contact me by email.';
+  if(fresh(read(pending)))showError();
  });
 })();

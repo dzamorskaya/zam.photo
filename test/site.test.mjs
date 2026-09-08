@@ -104,3 +104,18 @@ test('Inquiry form uses native provider protection; activation gate never claims
  assert.ok(!pages.get('/contact/thank-you/').includes('Your inquiry is on its way.'));
  assert.ok(pages.get('/contact/thank-you/').includes('noindex,follow'));
 });
+test('Final UX cleanup keeps publications inert and booking links at the inquiry form',()=>{
+ const d=structuredClone(data);d.publications.forEach(p=>p.url='https://example.com/magazine');
+ for(const [route,html] of renderSite(d,manifest)){
+  for(const block of html.matchAll(/<div class="publication-grid">(.*?)<\/section>/gs))assert.ok(!/<a\b|data-lightbox/.test(block[1]),route);
+  for(const a of html.matchAll(/<a\b([^>]*)>(.*?)<\/a>/gs)){
+   if(/Book a Shoot|Start your project|Retouching Inquiry/.test(a[2]))assert.match(a[1],/href="\/contact\/(?:\?type=Retouching)?#inquiry"/,route);
+  }
+ }
+ const contact=pages.get('/contact/');
+ assert.match(contact,/id="commercial-fields" hidden disabled/);
+ assert.match(contact,/Tell me about your project/);
+ assert.match(contact,/My dates are flexible/);
+ assert.ok(!contact.includes('The commercial details section is optional'));
+ assert.ok(!pages.get('/work/').includes('Let’s discuss your session.'));
+});
