@@ -136,7 +136,7 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
    if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Submission was not accepted');
    remove(key);track('contact_form_submit');
    form.hidden=true;
-   const confirmation=document.querySelector('#inquiry-success');confirmation.hidden=false;confirmation.focus();
+   const confirmation=document.querySelector('#inquiry-success');confirmation.hidden=false;confirmation.focus({preventScroll:true});confirmation.scrollIntoView({behavior:'instant',block:'center'});
   }catch{save();showError();}
   finally{clearTimeout(timer);sending=false;submit.disabled=false;form.removeAttribute('aria-busy');}
  });
