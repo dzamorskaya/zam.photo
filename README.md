@@ -51,30 +51,29 @@ is included in final selected images. The violet series remains unpublished.
 
 ### Inquiry form activation
 
-The native FormSubmit form is prepared in `src/render.mjs`. Its recipient is
-`settings.email`. The owner confirmed activation; FormSubmit accepted a labelled verification
-submission with `success: true`. `settings.formEnabled` is now true. The owner confirmed iCloud receipt. The native client auto-response still needs inbox confirmation.
-
-After the owner clicks **Activate Form**, enable the form locally and test one
-clearly labelled submission with the owner. Verify both the owner notification
-and client confirmation before publishing the enabled configuration. Keep
-reCAPTCHA enabled: FormSubmit does not send auto-responses for AJAX submissions
-or when reCAPTCHA is disabled. Do not send tests to unrelated email addresses.
+The FormSubmit form is prepared in `src/render.mjs`; its recipient is
+`settings.email`. Activation and owner iCloud receipt were previously confirmed.
+On September 9, 2026 the owner chose AJAX submission with inline confirmation
+and error handling instead of the client auto-response. `src/site.js` posts JSON
+to FormSubmit's AJAX endpoint, checks both HTTP status and the success flag,
+and shows confirmation only after acceptance. There is a 25-second timeout and
+duplicate submission protection. The native form remains a no-JavaScript fallback.
+No client auto-response is configured. Do not send tests to unrelated addresses.
 
 The browser validates required fields and email, conditionally disables
 commercial fields, and retains a per-tab draft for up to two hours. Provider
-errors preserve that draft on return to the form. The external provider handles
+errors preserve all entered values and the draft on the same page. The external provider handles
 spam protection; custom server-side validation of every business field is not
 implemented on this static GitHub Pages site. This portion of the brief remains
 open if stricter server-side validation is required. Never claim an email was
 delivered based only on a local success screen or a mocked test.
 
 Analytics events are wired but no GA measurement ID is configured. Two owner-provided photographs now appear on About. Real client
-reviews and verified publication issue dates / external links are still awaiting owner-provided material. Do not fill these
+reviews and verified publication issue dates are still awaiting owner-provided material. Publications must remain non-clickable, without external links. Do not fill these
 with invented content or portfolio models.
 
 Verification: `npm test` covers routes, approved pricing, unpublished work,
 service FAQs, activation gating and metadata. Browser checks additionally cover
-mobile layouts, native form payloads, offline / service failure recovery,
-service prefill and publication lightboxes. Test interceptions do not establish
+mobile layouts, AJAX form payloads, offline / service failure recovery,
+service prefill and non-clickable publications. Test interceptions do not establish
 real email delivery.

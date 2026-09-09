@@ -82,21 +82,14 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
 
 // Inquiry drafts live only in this tab and expire after two hours.
 (() => {
- const form=document.querySelector('#inquiry-form'), key='zam-inquiry-draft', pending='zam-inquiry-pending';
+ const form=document.querySelector('#inquiry-form'), key='zam-inquiry-draft';
  const read=(key)=>{try{return JSON.parse(sessionStorage.getItem(key));}catch{return null;}};
  const write=(key,value)=>{try{sessionStorage.setItem(key,JSON.stringify(value));}catch{}};
  const remove=(key)=>{try{sessionStorage.removeItem(key);}catch{}};
  const fresh=item=>item&&Date.now()-item.time<2*60*60*1000;
  const track=name=>{if(enabled)window.gtag('event',name,{page_path:location.pathname});};
- const pendingSubmission=read(pending);
- if(document.body.dataset.page==='inquiry-confirmation'){
-  const receipt=new URLSearchParams(location.search).get('submission');
-  if(fresh(pendingSubmission)&&receipt&&receipt===pendingSubmission.receipt){
-   document.querySelector('h1').textContent='Thank you. Your inquiry is on its way.';
-   document.querySelector('#inquiry-confirmation').textContent='I’ll review the details and get back to you within 24 hours.';
-   track('contact_form_submit');remove(key);remove(pending);history.replaceState(null,'',location.pathname);
-  }
- }
+ remove('zam-inquiry-pending');
+ if(document.body.dataset.page==='inquiry-confirmation')remove(key);
  document.querySelectorAll('a[href="/contact/#inquiry"]').forEach(a=>a.addEventListener('click',()=>{
   const serviceType={'portrait-photographer-los-angeles':'Portrait','headshots-los-angeles':'Headshots','personal-branding-photographer-los-angeles':'Personal Branding','fashion-editorial-photographer-los-angeles':'Fashion / Editorial','commercial-photography-los-angeles':'Commercial'}[location.pathname.split('/')[1]];
   const value=a.dataset.inquiryType||serviceType||'';
@@ -104,7 +97,7 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
  }));
  if(!form)return;
  const status=document.querySelector('#form-status'),commercial=document.querySelector('#commercial-fields');
- const showError=()=>{status.textContent='Something went wrong. Please try again or email me directly at dzamorskaya@icloud.com.';status.setAttribute('role','alert');};
+ const showError=()=>{status.setAttribute('role','alert');status.textContent='Something went wrong. Please try again or email me directly at dzamorskaya@icloud.com.';status.focus();};
  const controls=[...form.querySelectorAll('.form-grid input,.form-grid textarea,.form-grid select')];
  const draft=read(key);
  if(fresh(draft)){controls.forEach(el=>{if(el.type==='checkbox')el.checked=draft.values?.[el.name]===true;else if(typeof draft.values?.[el.name]==='string')el.value=draft.values[el.name];});}else remove(key);
@@ -122,16 +115,29 @@ document.querySelectorAll('[data-track]').forEach(a=>a.addEventListener('click',
  let started=false;
  form.addEventListener('input',()=>{save();if(!started){started=true;track('contact_form_start');}});
  form.addEventListener('change',save);
- form.addEventListener('submit',event=>{
-  if(form.dataset.enabled!=='true'){event.preventDefault();return;}
-  if(!navigator.onLine){event.preventDefault();save();showError();return;}
-  for(const name of ['name','email','message'])form.elements[name].value=form.elements[name].value.trim();
-  if(!form.reportValidity()){event.preventDefault();return;}
-  save();form.elements.submitted_at.value=new Date().toISOString();const receipt=crypto.randomUUID();const next=new URL(form.elements._next.value);next.searchParams.set('submission',receipt);form.elements._next.value=next.href;write(pending,{time:Date.now(),receipt});
-  status.textContent='Continue to verification to finish sending your inquiry. If sending is interrupted, return here to recover your details.';
-  // Native submission preserves provider spam protection and the client auto-response.
- });
- addEventListener('pageshow',()=>{
-  if(fresh(read(pending)))showError();
+ let sending=false;
+ const submit=form.querySelector('button[type="submit"]');
+ form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  if(sending||form.dataset.enabled!=='true')return;
+  if(!form.reportValidity())return;
+  save();
+  if(!navigator.onLine){showError();return;}
+  form.elements.submitted_at.value=new Date().toISOString();
+  const payload=Object.fromEntries(new FormData(form));
+  delete payload._next;
+  const endpoint=new URL(form.action);endpoint.pathname='/ajax'+endpoint.pathname;
+  sending=true;submit.disabled=true;form.setAttribute('aria-busy','true');
+  status.setAttribute('role','status');status.textContent='Sending your inquiry…';
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+  try{
+   const response=await fetch(endpoint.href,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
+   const result=await response.json();
+   if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Submission was not accepted');
+   remove(key);track('contact_form_submit');
+   form.hidden=true;
+   const confirmation=document.querySelector('#inquiry-success');confirmation.hidden=false;confirmation.focus();
+  }catch{save();showError();}
+  finally{clearTimeout(timer);sending=false;submit.disabled=false;form.removeAttribute('aria-busy');}
  });
 })();

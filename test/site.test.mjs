@@ -94,14 +94,15 @@ test('Service FAQs and author biography do not substitute unrelated content',()=
  const withoutPortrait=structuredClone(data);withoutPortrait.settings.portraitImage='';withoutPortrait.settings.aboutSecondaryImage='';assert.ok(!/<div class="about-image">/.test(renderSite(withoutPortrait,manifest).get('/about/')));
  assert.ok(pages.get('/headshots-los-angeles/').includes('How many looks can I bring?'));
 });
-test('Inquiry form uses native provider protection; activation gate never claims success',()=>{
+test('Inquiry form retains native fallback and supports inline confirmation without autoresponse',()=>{
  const d=structuredClone(data);d.settings.formEnabled=true;
  const html=renderSite(d,manifest).get('/contact/');
  assert.ok(html.includes('action="https://formsubmit.co/dzamorskaya@icloud.com" method="POST"'));
- for(const name of ['name','email','type','message','_autoresponse','_honey','submitted_at'])assert.ok(html.includes(`name="${name}"`));
+ for(const name of ['name','email','type','message','_honey','submitted_at'])assert.ok(html.includes(`name="${name}"`));
+ assert.ok(!html.includes('name="_autoresponse"'));assert.ok(html.includes('id="inquiry-success" hidden'));
  assert.ok(!html.includes('name="_captcha"'));assert.ok(html.includes('fieldset class="commercial-fields"'));
  d.settings.formEnabled=false;assert.ok(renderSite(d,manifest).get('/contact/').includes('type="submit" disabled'));
- assert.ok(!pages.get('/contact/thank-you/').includes('Your inquiry is on its way.'));
+ assert.ok(pages.get('/contact/thank-you/').includes('Your inquiry is on its way.'));
  assert.ok(pages.get('/contact/thank-you/').includes('noindex,follow'));
 });
 test('Final UX cleanup keeps publications inert and booking links at the inquiry form',()=>{
