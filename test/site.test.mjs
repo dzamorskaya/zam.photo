@@ -85,7 +85,7 @@ test('Confirmed PDF packages are consistent between pricing and service pages',(
  assert.ok(pages.get('/pricing/').includes('Studio rental, if needed, is paid separately'));
 });
 test('Hidden violet series and empty portfolio categories stay out of public pages',()=>{
- assert.equal(data.projects.filter(p=>p.published!==false).length,7);
+assert.equal(data.projects.filter(p=>p.published!==false).length,8);
  for(const html of pages.values())assert.ok(!html.includes('violet-')&&!html.includes('Violet hour'));
  const work=pages.get('/work/');for(const category of ['headshots','branding','commercial'])assert.ok(!work.includes(`data-filter="${category}"`));
 });

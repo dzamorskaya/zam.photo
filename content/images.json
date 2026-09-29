@@ -834,5 +834,157 @@
       }
     ],
     "src": "/images/daria-zamorskaia-at-work-1600.webp"
+  },
+  "desert-signal-2229": {
+    "width": 3629,
+    "height": 5444,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2229-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2229-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2229-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2229-1600.webp"
+  },
+  "desert-signal-2251": {
+    "width": 3949,
+    "height": 5923,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2251-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2251-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2251-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2251-1600.webp"
+  },
+  "desert-signal-2191": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2191-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2191-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2191-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2191-1600.webp"
+  },
+  "desert-signal-2285": {
+    "width": 3967,
+    "height": 5950,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2285-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2285-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2285-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2285-1600.webp"
+  },
+  "desert-signal-2247": {
+    "width": 3784,
+    "height": 5676,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2247-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2247-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2247-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2247-1600.webp"
+  },
+  "desert-signal-2345": {
+    "width": 3991,
+    "height": 5987,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2345-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2345-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2345-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2345-1600.webp"
+  },
+  "desert-signal-2355": {
+    "width": 4000,
+    "height": 6000,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2355-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2355-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2355-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2355-1600.webp"
+  },
+  "desert-signal-2206": {
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      {
+        "src": "/images/desert-signal-2206-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/desert-signal-2206-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/desert-signal-2206-1600.webp",
+        "width": 1600
+      }
+    ],
+    "src": "/images/desert-signal-2206-1600.webp"
   }
 }

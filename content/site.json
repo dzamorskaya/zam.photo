@@ -296,6 +296,62 @@
       "title": "Behind the camera",
       "category": "personal",
       "alt": "Daria Zamorskaia photographing outdoors beside a lake and mountains"
+    },
+    {
+      "id": "desert-signal-2229",
+      "image": "desert-signal-2229",
+      "title": "Desert Signal — 01",
+      "category": "editorial",
+      "alt": "Male model in an open black blazer seated beneath a wire-mesh structure in warm desert light"
+    },
+    {
+      "id": "desert-signal-2251",
+      "image": "desert-signal-2251",
+      "title": "Desert Signal — 02",
+      "category": "editorial",
+      "alt": "Male model in an open black blazer standing in the doorway of an abandoned structure"
+    },
+    {
+      "id": "desert-signal-2191",
+      "image": "desert-signal-2191",
+      "title": "Desert Signal — 03",
+      "category": "editorial",
+      "alt": "Male model in an open black blazer seen through a broken window"
+    },
+    {
+      "id": "desert-signal-2285",
+      "image": "desert-signal-2285",
+      "title": "Desert Signal — 04",
+      "category": "editorial",
+      "alt": "Male model in a black suit holding a chain beside an abandoned wire-mesh structure"
+    },
+    {
+      "id": "desert-signal-2247",
+      "image": "desert-signal-2247",
+      "title": "Desert Signal — 05",
+      "category": "editorial",
+      "alt": "Close portrait of a male model in an open black blazer in direct late-afternoon light"
+    },
+    {
+      "id": "desert-signal-2345",
+      "image": "desert-signal-2345",
+      "title": "Desert Signal — 06",
+      "category": "editorial",
+      "alt": "Male model in an open black blazer holding a rope beside an abandoned structure at golden hour"
+    },
+    {
+      "id": "desert-signal-2355",
+      "image": "desert-signal-2355",
+      "title": "Desert Signal — 07",
+      "category": "editorial",
+      "alt": "Close portrait of a male model in an open black blazer framed by wood and wire mesh"
+    },
+    {
+      "id": "desert-signal-2206",
+      "image": "desert-signal-2206",
+      "title": "Desert Signal — 08",
+      "category": "editorial",
+      "alt": "Male model in a black blazer seen behind the broken window of an abandoned building"
     }
   ],
   "projects": [
@@ -437,6 +493,27 @@
         "city-6984"
       ],
       "description": "A black blazer moves through red columns, hanging lanterns and an unexpected turquoise pool.",
+      "credits": [],
+      "published": true
+    },
+    {
+      "slug": "desert-signal",
+      "title": "Desert Signal",
+      "category": "editorial",
+      "location": "",
+      "year": "",
+      "cover": "desert-signal-2229",
+      "photos": [
+        "desert-signal-2229",
+        "desert-signal-2251",
+        "desert-signal-2191",
+        "desert-signal-2285",
+        "desert-signal-2247",
+        "desert-signal-2345",
+        "desert-signal-2355",
+        "desert-signal-2206"
+      ],
+      "description": "A black suit, hard desert light and an abandoned frame. An editorial in eight photographs.",
       "credits": [],
       "published": true
     }
