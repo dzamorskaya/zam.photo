@@ -986,5 +986,24 @@
       }
     ],
     "src": "/images/desert-signal-2206-srgb-1600.webp"
+  },
+  "mountain-home-cover": {
+    "width": 1080,
+    "height": 1350,
+    "variants": [
+      {
+        "src": "/images/mountain-home-cover-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/images/mountain-home-cover-960.webp",
+        "width": 960
+      },
+      {
+        "src": "/images/mountain-home-cover-1080.webp",
+        "width": 1080
+      }
+    ],
+    "src": "/images/mountain-home-cover-1080.webp"
   }
 }

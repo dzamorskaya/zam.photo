@@ -270,6 +270,13 @@
       "alt": "Selin Magazine cover featuring a male model among green foliage"
     },
     {
+      "id": "mountain-home-cover",
+      "image": "mountain-home-cover",
+      "title": "Mountain Home Magazine — October 2026 cover",
+      "category": "editorial",
+      "alt": "Mountain Home Magazine October 2026 cover featuring two men with tennis rackets, photographed by Daria Zamorskaia"
+    },
+    {
       "id": "fence",
       "image": "p_fence",
       "title": "Neon notes — City fragments",
@@ -794,6 +801,15 @@
     }
   ],
   "publications": [
+    {
+      "id": "mountain-home",
+      "name": "Mountain Home Magazine",
+      "image": "mountain-home-cover",
+      "issue": "October",
+      "year": "2026",
+      "url": "",
+      "published": true
+    },
     {
       "id": "selin",
       "name": "Selin Magazine",
