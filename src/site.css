@@ -98,3 +98,21 @@ h1,h2,.footer-name,.next-title{font-family:var(--display);font-weight:650;letter
 @media(hover:hover) and (pointer:fine){.project-grid article:hover .project-image::after,.project-grid article:focus-within .project-image::after{border-color:rgba(226,221,210,.72)}}
 @media(max-width:700px){h1,h2,.footer-name,.next-title{letter-spacing:-.055em}.hero h1{letter-spacing:-.065em}.page-heading h1{letter-spacing:-.06em}}
 @media(prefers-reduced-motion:reduce){.project-image::after{transition:none}}
+
+.hero-secondary,
+.service-details-link,
+.next-title:hover,
+.contact-methods a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: .22em;
+  text-decoration-thickness: 1px;
+}
+.button,
+.pricing-actions .button,
+.inquiry-section .button {
+  justify-content: center;
+}
+.contact-methods > a,
+.contact-methods > div {
+  grid-template-columns: minmax(66px, 18%) minmax(0, 1fr);
+}
